@@ -1,22 +1,24 @@
 <?php
 
-//This is our controller!
+/**
+ * Marcos Rivera
+ * 01-15-2020
+ * 328/chicken/index.php
+ */
 
-//Turn on error reporting
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-//Require the autoload file
-require_once ('vendor/autoload.php');
+//Require autoload file
+require_once("vendor/autoload.php");
 
-//Create an instance of the base class
+//Instantiate Fat-Free framework (F3)
 $f3 = Base::instance();
 
-//Define default route
-$f3->route('GET /', function() {
+//Define a default route
+$f3->route('GET /', function () {
     $view = new Template();
-    echo $view->render('views/home.html');
+    echo $view->render('views/all-about-chickens.html');
 });
 
-//Run fat free
 $f3->run();
